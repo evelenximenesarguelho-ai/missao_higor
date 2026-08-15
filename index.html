@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missão Higor ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#05070b;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.screen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:
+    radial-gradient(circle at 50% 20%,#3b1730 0%,#100d19 35%,#05070b 75%);
+}
+
+.game{
+  width:100%;
+  max-width:650px;
+  min-height:90vh;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:25px;
+  overflow:hidden;
+  background:rgba(10,12,18,.94);
+  box-shadow:0 0 50px rgba(255,40,100,.15);
+}
+
+.header{
+  padding:28px 22px 18px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+  font-size:14px;
+  letter-spacing:4px;
+  color:#ff557d;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.header h1{
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+.header p{
+  color:#aaa;
+  font-size:15px;
+}
+
+.hero{
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:35px 20px;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.8)),
+    radial-gradient(circle,#66233d,#11131b 65%);
+}
+
+.hero .heart{
+  font-size:85px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.12)}
+}
+
+.content{
+  padding:25px;
+}
+
+.progress{
+  height:7px;
+  background:#222631;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:25px;
+}
+
+.bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#ff3d70,#ff8a65);
+  transition:.5s;
+}
+
+.mission{
+  color:#ff6688;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.text{
+  color:#d1d1d1;
+  line-height:1.65;
+  font-size:17px;
+  margin-bottom:18px;
+}
+
+.quote{
+  border-left:3px solid #ff557d;
+  padding:15px;
+  background:rgba(255,70,110,.07);
+  color:#eee;
+  line-height:1.5;
+  border-radius:0 10px 10px 0;
+  margin-bottom:25px;
+}
+
+.choices{
+  display:grid;
+  gap:12px;
+}
+
+button{
+  width:100%;
+  border:1px solid rgba(255,255,255,.15);
+  background:#171b24;
+  color:white;
+  padding:17px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{
+  background:#252b38;
+  transform:translateY(-2px);
+}
+
+button.primary{
+  background:linear-gradient(135deg,#ff3d70,#d9275b);
+  border:none;
+  box-shadow:0 8px 25px rgba(255,45,100,.2);
+}
+
+.footer{
+  text-align:center;
+  color:#666;
+  font-size:12px;
+  padding:20px;
+}
+
+.final{
+  display:none;
+  text-align:center;
+  padding:20px 5px 10px;
+}
+
+.final .ring{
+  font-size:75px;
+  margin:20px;
+  animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+.final h2{
+  font-size:34px;
+}
+
+.final p{
+  color:#ddd;
+  line-height:1.7;
+  font-size:18px;
+  margin:18px 0 25px;
+}
+
+.hearts{
+  font-size:30px;
+  letter-spacing:8px;
+  animation:pulse 2s infinite;
+}
+
+#musicNote{
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  background:#171b24;
+  border:1px solid #333;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen">
+
+<div class="game">
+
+  <div class="header">
+    <div class="logo">MISSÃO ESPECIAL • 2026</div>
+    <h1>Missão Higor ❤️</h1>
+    <p>Uma missão diferente de todas as outras.</p>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="heart">❤️</div>
+      <p style="margin-top:15px;color:#ddd;">
+        O destino dessa missão<br>
+        pode mudar duas vidas.
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="progress">
+      <div class="bar" id="bar"></div>
+    </div>
+
+    <div id="gameContent">
+
+      <div class="mission">MISSÃO 01</div>
+
+      <h2 id="title">
+        O início da nossa história
+      </h2>
+
+      <p class="text" id="text">
+        Higor, você recebeu uma missão especial.
+        Não existem inimigos, armas ou mapas perigosos.
+        Existe apenas uma pessoa querendo descobrir
+        se você está disposto a viver a próxima fase
+        dessa história ao lado dela.
+      </p>
+
+      <div class="quote" id="quote">
+        "Algumas missões começam com um objetivo.
+        As melhores começam com um sentimento."
+      </div>
+
+      <div class="choices" id="choices">
+        <button class="primary" onclick="nextMission()">
+          🎮 ACEITAR MISSÃO
+        </button>
+      </div>
+
+    </div>
+
+    <div class="final" id="final">
+
+      <div class="ring">💍</div>
+
+      <h2>MISSÃO CONCLUÍDA ❤️</h2>
+
+      <p>
+        Higor,<br><br>
+
+        depois de todas as fases, todos os momentos,
+        todas as risadas e tudo que construímos juntos,
+        eu cheguei a uma conclusão:
+        <br><br>
+
+        <strong>eu quero continuar essa história com você.</strong>
+        <br><br>
+
+        Quero dividir a vida, os sonhos, as conquistas,
+        os dias bons e também os difíceis.
+        Quero que a nossa próxima fase seja ainda mais
+        especial.
+      </p>
+
+      <div class="quote">
+        Então, agente Higor...
+        <br><br>
+        <strong>você aceita a missão de casar comigo
+        no civil e continuar essa aventura ao meu lado?</strong>
+      </div>
+
+      <div class="hearts">❤️ 💍 ❤️</div>
+
+      <br>
+
+      <button class="primary" onclick="accepted()">
+        💍 EU ACEITO A MISSÃO
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Feito com amor para Higor ❤️
+  </div>
+
+</div>
+</div>
+
+<script>
+
+let mission = 0;
+
+const missions = [
+
+{
+title:"O início da nossa história",
+text:"Tudo começou de um jeito que talvez nenhum dos dois imaginasse. Aos poucos, você deixou de ser apenas uma pessoa especial e passou a ocupar um lugar único no meu coração.",
+quote:"Cada história de amor tem um começo. A nossa teve o encontro de duas pessoas que escolheram ficar.",
+button:"➡️ CONTINUAR MISSÃO"
+},
+
+{
+title:"A nossa jornada",
+text:"Vieram momentos inesquecíveis, conversas, risadas, desafios e lembranças que eu guardaria para sempre. Cada fase fez eu ter ainda mais certeza de que é você quem eu quero ao meu lado.",
+quote:"Não é sobre ter uma história perfeita. É sobre encontrar alguém com quem vale a pena viver todas as fases.",
+button:"🎮 AVANÇAR"
+},
+
+{
+title:"O objetivo verdadeiro",
+text:"Essa missão nunca foi sobre chegar a algum lugar. O verdadeiro objetivo sempre foi descobrir com quem eu quero construir o meu futuro.",
+quote:"E quando penso no meu futuro, você está nele.",
+button:"❤️ DESCOBRIR O OBJETIVO"
+},
+
+{
+title:"Última fase",
+text:"Higor, chegamos à última fase. Existe apenas uma escolha. Uma pergunta que eu queria fazer de um jeito que fosse tão especial quanto aquilo que sinto por você.",
+quote:"Prepare-se. Essa é a missão mais importante da nossa história.",
+button:"💍 IR PARA A ÚLTIMA FASE"
+}
+
+];
+
+function nextMission(){
+
+  if(mission < missions.length){
+
+    const m = missions[mission];
+
+    document.getElementById("title").innerText = m.title;
+    document.getElementById("text").innerText = m.text;
+    document.getElementById("quote").innerText = m.quote;
+
+    document.getElementById("bar").style.width =
+      ((mission + 1) / missions.length * 100) + "%";
+
+    document.getElementById("choices").innerHTML =
+      `<button class="primary" onclick="nextMission()">${m.button}</button>`;
+
+    mission++;
+
+  }else{
+
+    document.getElementById("gameContent").style.display="none";
+    document.getElementById("final").style.display="block";
+
+    document.getElementById("bar").style.width="100%";
+  }
+
+}
+
+function accepted(){
+
+  document.getElementById("final").innerHTML = `
+
+    <div class="ring">💍❤️</div>
+
+    <h2>SIM! ❤️</h2>
+
+    <p>
+      Então está decidido.<br><br>
+
+      A partir de agora começa uma nova fase
+      da nossa história.
+      <br><br>
+
+      <strong>Missão: construir uma vida juntos.</strong>
+      <br><br>
+
+      Te amo, Higor.
+    </p>
+
+    <div class="hearts">
+      ❤️ ❤️ ❤️
+    </div>
+
+  `;
+
+}
+
+</script>
+
+</body>
+</html>
