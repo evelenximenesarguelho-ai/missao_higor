@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MISSÃO HIGOR ❤️</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#07080c;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+width:100%;
+max-width:850px;
+margin:auto;
+padding:15px;
+}
+
+.top{
+text-align:center;
+padding:25px 10px;
+}
+
+.logo{
+color:#ff4f82;
+font-size:14px;
+font-weight:bold;
+letter-spacing:5px;
+}
+
+.card{
+background:#11131a;
+border:1px solid #292c36;
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 0 50px rgba(255,45,104,.15);
+}
+
+.hero{
+height:420px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+radial-gradient(
+circle,
+rgba(255,45,104,.30),
+rgba(7,8,12,.15) 45%,
+#050609 80%
+);
+}
+
+.heart{
+font-size:110px;
+animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.12);
+}
+
+}
+
+.hero p{
+font-size:20px;
+margin-top:25px;
+color:#ddd;
+}
+
+.content{
+padding:35px 25px 50px;
+}
+
+.progress{
+height:9px;
+background:#282b35;
+border-radius:20px;
+margin-bottom:40px;
+overflow:hidden;
+}
+
+.progressBar{
+height:100%;
+width:25%;
+background:#ff2d68;
+transition:1s;
+}
+
+.mission{
+color:#ff4f82;
+font-weight:bold;
+font-size:14px;
+letter-spacing:4px;
+margin-bottom:20px;
+}
+
+h1{
+font-size:50px;
+line-height:1.05;
+margin-bottom:25px;
+}
+
+h2{
+font-size:38px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.text{
+font-size:19px;
+line-height:1.75;
+color:#d7d7dc;
+}
+
+.quote{
+margin:30px 0;
+padding:22px;
+border-left:5px solid #ff2d68;
+background:#1b1018;
+border-radius:0 15px 15px 0;
+font-size:18px;
+line-height:1.6;
+}
+
+.objectives{
+background:#0c0e13;
+border:1px solid #292c36;
+border-radius:18px;
+padding:22px;
+margin:30px 0;
+}
+
+.objectives h3{
+color:#d8a84e;
+margin-bottom:15px;
+}
+
+.objective{
+padding:13px 0;
+border-bottom:1px solid #292c36;
+color:#ddd;
+}
+
+.objective:last-child{
+border-bottom:none;
+}
+
+button{
+width:100%;
+padding:19px;
+margin-top:12px;
+border:none;
+border-radius:15px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.mainButton{
+background:#ff2d68;
+color:#fff;
+box-shadow:0 10px 30px rgba(255,45,104,.25);
+}
+
+.choice{
+background:#191c24;
+color:#fff;
+border:1px solid #343845;
+text-align:left;
+}
+
+.choice:active,
+.mainButton:active{
+transform:scale(.98);
+}
+
+.hidden{
+display:none !important;
+}
+
+.result{
+margin-top:25px;
+padding:22px;
+background:#151820;
+border:1px solid #393d49;
+border-radius:18px;
+line-height:1.7;
+}
+
+.final{
+text-align:center;
+padding-top:30px;
+}
+
+.ring{
+font-size:90px;
+margin-bottom:20px;
+}
+
+.success{
+border-color:#42d392;
+background:rgba(66,211,146,.08);
+}
+
+.footer{
+text-align:center;
+color:#777;
+font-size:13px;
+margin-top:35px;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:40px;
+}
+
+h2{
+font-size:36px;
+}
+
+.hero{
+height:360px;
+}
+
+.heart{
+font-size:90px;
+}
+
+.text{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="top">
+
+<div class="logo">
+MISSÃO ESPECIAL • 2026
+</div>
+
+</div>
+
+
+<div class="card">
+
+
+<!-- ABERTURA -->
+
+<section class="hero">
+
+<div>
+
+<div class="heart">
+❤️
+</div>
+
+<p>
+O destino dessa missão<br>
+pode mudar duas vidas.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="content">
+
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progressBar">
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- MISSÃO 01 -->
+<!-- ========================= -->
+
+<section id="mission1">
+
+<div class="mission">
+MISSÃO 01
+</div>
+
+<h1>
+O início da nossa história
+</h1>
+
+<p class="text">
+
+Higor, você recebeu uma missão especial.
+
+Não existem inimigos, armas ou mapas perigosos.
+
+Existe apenas uma pessoa querendo descobrir
+se você está disposto a viver a próxima fase
+dessa história ao lado dela.
+
+</p>
+
+
+<div class="quote">
+
+"Algumas missões começam com um objetivo.
+As melhores começam com um sentimento."
+
+</div>
+
+
+<div class="objectives">
+
+<h3>
+OBJETIVOS DA MISSÃO
+</h3>
+
+<div class="objective">
+❤️ Escolher amar.
+</div>
+
+<div class="objective">
+💕 Construir memórias.
+</div>
+
+<div class="objective">
+🫶 Fazer planos juntos.
+</div>
+
+<div class="objective">
+🎯 Enfrentar tudo juntos.
+</div>
+
+<div class="objective">
+💍 Chegar ao próximo nível.
+</div>
+
+</div>
+
+
+<button
+class="mainButton"
+onclick="abrirMissao2()">
+
+🎮 ACEITAR MISSÃO
+
+</button>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MISSÃO 02 -->
+<!-- ========================= -->
+
+<section
+id="mission2"
+class="hidden">
+
+<div class="mission">
+MISSÃO 02 • A ESCOLHA
+</div>
+
+<h2>
+A escolha é sua.
+</h2>
+
+<p class="text">
+
+Você chegou até aqui.
+
+Agora existe uma nova missão.
+
+Não é sobre vencer uma batalha.
+
+É sobre escolher quem você quer
+ter ao seu lado nas próximas fases
+da vida.
+
+</p>
+
+
+<div class="quote">
+
+"Alguns caminhos levam a lugares.
+Outros levam à pessoa certa."
+
+</div>
+
+
+<div class="objectives">
+
+<h3>
+NOVOS OBJETIVOS
+</h3>
+
+<div class="objective">
+❤️ Permanecer ao lado dela.
+</div>
+
+<div class="objective">
+🎮 Viver essa aventura juntos.
+</div>
+
+<div class="objective">
+💕 Criar novas histórias.
+</div>
+
+<div class="objective">
+💍 Descobrir o próximo destino.
+</div>
+
+</div>
+
+
+<h3 style="margin-top:30px;">
+
+HIGOR, QUAL É A SUA ESCOLHA?
+
+</h3>
+
+
+<button
+class="choice"
+onclick="escolha('amor')">
+
+❤️ Eu escolho você.
+
+</button>
+
+
+<button
+class="choice"
+onclick="escolha('aventura')">
+
+🎮 Eu aceito essa aventura.
+
+</button>
+
+
+<button
+class="choice"
+onclick="escolha('futuro')">
+
+💍 Quero descobrir nosso futuro.
+
+</button>
+
+
+<div
+id="resultado"
+class="result hidden">
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- MISSÃO FINAL -->
+<!-- ========================= -->
+
+<section
+id="missaoFinal"
+class="hidden final">
+
+<div class="ring">
+💍
+</div>
+
+<div class="mission">
+MISSÃO FINAL
+</div>
+
+<h2>
+A próxima fase é nossa.
+</h2>
+
+
+<p class="text">
+
+Higor...
+
+Depois de todas essas missões,
+chegamos ao objetivo final.
+
+</p>
+
+
+<div class="quote">
+
+"Eu não quero apenas viver momentos
+com você.
+
+Quero construir uma vida inteira
+ao seu lado."
+
+</div>
+
+
+<p class="text">
+
+Você aceita continuar essa aventura
+comigo?
+
+❤️
+
+</p>
+
+
+<button
+class="mainButton"
+onclick="aceitar()">
+
+💍 SIM, EU ACEITO!
+
+</button>
+
+
+<div
+id="mensagemFinal"
+class="result success hidden">
+
+❤️ <strong>MISSÃO CONCLUÍDA!</strong>
+
+<br><br>
+
+Higor escolheu a próxima fase.
+
+<br><br>
+
+<strong>
+Agora começa a nossa maior aventura:
+a vida juntos.
+</strong>
+
+<br><br>
+
+❤️ 💍 ❤️
+
+</div>
+
+
+</section>
+
+
+<div class="footer">
+
+Feito com amor para a pessoa que eu escolhi
+para a vida. ❤️
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* ========================= */
+/* ABRIR MISSÃO 02 */
+/* ========================= */
+
+function abrirMissao2(){
+
+document
+.getElementById("mission1")
+.classList
+.add("hidden");
+
+document
+.getElementById("mission2")
+.classList
+.remove("hidden");
+
+document
+.getElementById("progressBar")
+.style
+.width="50%";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* ========================= */
+/* ESCOLHAS DA MISSÃO 02 */
+/* ========================= */
+
+function escolha(tipo){
+
+var resultado =
+document.getElementById("resultado");
+
+resultado.classList.remove("hidden");
+
+
+if(tipo === "amor"){
+
+resultado.innerHTML =
+"❤️ <strong>ESCOLHA REGISTRADA.</strong><br><br>" +
+
+"Você escolheu ficar ao lado dela. " +
+
+"Talvez essa seja a decisão mais importante " +
+
+"de toda a missão.";
+
+}
+
+
+if(tipo === "aventura"){
+
+resultado.innerHTML =
+"🎮 <strong>AVENTURA ACEITA!</strong><br><br>" +
+
+"Você decidiu viver essa história junto dela. " +
+
+"Uma nova fase acaba de ser desbloqueada.";
+
+}
+
+
+if(tipo === "futuro"){
+
+resultado.innerHTML =
+"💍 <strong>FUTURO DESBLOQUEADO!</strong><br><br>" +
+
+"Existe uma última missão esperando por você.";
+
+}
+
+
+/* espera um pouco e libera a missão final */
+
+setTimeout(function(){
+
+document
+.getElementById("missaoFinal")
+.classList
+.remove("hidden");
+
+document
+.getElementById("progressBar")
+.style
+.width="100%";
+
+document
+.getElementById("missaoFinal")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+},1500);
+
+}
+
+
+/* ========================= */
+/* RESPOSTA FINAL */
+/* ========================= */
+
+function aceitar(){
+
+document
+.getElementById("mensagemFinal")
+.classList
+.remove("hidden");
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>
