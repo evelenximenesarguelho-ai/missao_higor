@@ -1,5 +1,3 @@
-  
-  
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -18,6 +16,7 @@
   --white:#f5f5f7;
   --muted:#a8abb5;
   --line:#292c36;
+  --green:#42d392;
 }
 
 *{
@@ -32,291 +31,253 @@ html{
 
 body{
   background:
-    radial-gradient(circle at 50% 0%, #35101f 0%, transparent 35%),
-    linear-gradient(180deg,#050609,#0a0b10 50%,#050609);
+    radial-gradient(circle at 50% 0%,#321021 0%,#07080c 42%);
   color:var(--white);
   font-family:Arial,Helvetica,sans-serif;
   min-height:100vh;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.08;
-  background-image:
-    linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
-  background-size:45px 45px;
-}
-
 .wrap{
-  width:min(100%,720px);
+  width:100%;
+  max-width:900px;
   margin:auto;
-  padding:20px 16px 50px;
+  padding:20px;
 }
 
 .top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 4px 20px;
+  text-align:center;
+  padding:25px 10px;
 }
 
 .logo{
-  font-weight:900;
-  letter-spacing:5px;
-  font-size:15px;
-}
-
-.status{
-  color:#ff416f;
-  font-size:11px;
-  letter-spacing:2px;
+  font-size:13px;
+  letter-spacing:6px;
+  color:var(--pink2);
+  font-weight:bold;
 }
 
 .card{
-  background:rgba(12,14,20,.96);
+  background:rgba(17,19,26,.96);
   border:1px solid var(--line);
-  border-radius:22px;
+  border-radius:24px;
   overflow:hidden;
   box-shadow:
-    0 25px 80px rgba(0,0,0,.6),
-    0 0 40px rgba(255,45,104,.08);
+    0 0 60px rgba(255,45,104,.12),
+    0 20px 60px rgba(0,0,0,.5);
 }
 
 .hero{
-  min-height:330px;
-  position:relative;
+  min-height:420px;
   display:flex;
-  align-items:flex-end;
-  overflow:hidden;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 25px;
   background:
-    radial-gradient(circle at 70% 35%,rgba(255,87,129,.45),transparent 25%),
-    linear-gradient(145deg,#241018,#08090d 60%,#190912);
+    radial-gradient(circle at center,
+      rgba(255,45,104,.30),
+      rgba(7,8,12,.15) 40%,
+      rgba(0,0,0,.85) 80%);
+  border-bottom:1px solid var(--line);
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(120deg,transparent 20%,rgba(255,255,255,.05) 21%,transparent 22%),
-    linear-gradient(180deg,transparent 50%,rgba(0,0,0,.9));
+.heart{
+  font-size:110px;
+  animation:pulse 1.8s infinite;
+  filter:drop-shadow(0 0 30px rgba(255,45,104,.5));
 }
 
-.heroText{
-  position:relative;
-  z-index:2;
-  padding:35px 25px;
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.12)}
 }
 
-.small{
-  color:var(--pink2);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:4px;
-  margin-bottom:12px;
-}
-
-.hero h1{
-  font-size:52px;
-  line-height:.9;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.hero h1 span{
-  color:var(--pink);
-  display:block;
-  text-shadow:0 0 25px rgba(255,45,104,.35);
-}
-
-.hero p{
-  color:#dddde2;
-  font-size:15px;
-  line-height:1.6;
-  max-width:500px;
+.heroText p{
+  margin-top:25px;
+  color:#ddd;
+  font-size:21px;
 }
 
 .content{
-  padding:28px 24px 35px;
+  padding:38px 30px 50px;
 }
 
 .progress{
-  height:7px;
+  height:10px;
   background:#242733;
   border-radius:20px;
   overflow:hidden;
-  margin-bottom:28px;
+  margin-bottom:45px;
 }
 
 .bar{
   height:100%;
-  width:20%;
-  background:linear-gradient(90deg,var(--pink),#ff7b9c);
-  box-shadow:0 0 18px rgba(255,45,104,.7);
-  transition:.5s;
+  width:25%;
+  background:linear-gradient(90deg,var(--pink),var(--pink2));
+  border-radius:20px;
+  transition:.6s;
 }
 
 .mission{
   color:var(--pink2);
-  font-size:12px;
+  font-size:14px;
   font-weight:bold;
   letter-spacing:4px;
-  margin-bottom:12px;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(38px,8vw,72px);
+  line-height:1;
+  margin-bottom:25px;
 }
 
 h2{
-  font-size:32px;
-  line-height:1.1;
-  margin-bottom:20px;
+  font-size:clamp(32px,7vw,55px);
+  line-height:1.05;
+  margin-bottom:25px;
 }
 
-#text{
-  color:#d6d6dc;
-  font-size:18px;
-  line-height:1.8;
+.text{
+  color:#d8d8dd;
+  font-size:20px;
+  line-height:1.75;
 }
 
 .quote{
-  margin:25px 0;
-  padding:20px;
+  margin:30px 0;
+  padding:25px;
+  border-left:5px solid var(--pink);
   background:rgba(255,45,104,.07);
-  border-left:4px solid var(--pink);
-  border-radius:0 14px 14px 0;
+  border-radius:0 15px 15px 0;
   color:#eee;
-  font-size:16px;
+  font-size:19px;
   line-height:1.6;
+}
+
+.objectives{
+  margin:35px 0;
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#0c0e14;
+}
+
+.objectives h3{
+  color:var(--gold);
+  margin-bottom:20px;
+  letter-spacing:2px;
+}
+
+.objective{
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+  color:#ddd;
+}
+
+.objective:last-child{
+  border-bottom:0;
 }
 
 button{
   width:100%;
   border:0;
   border-radius:16px;
-  padding:18px 20px;
-  font-size:16px;
-  font-weight:900;
-  letter-spacing:1px;
+  padding:20px;
+  font-size:18px;
+  font-weight:bold;
   cursor:pointer;
-  color:white;
-  background:linear-gradient(135deg,var(--pink),#d91652);
-  box-shadow:0 12px 30px rgba(255,45,104,.25);
-  transition:.2s;
+  margin-top:15px;
+  transition:.25s;
 }
 
-button:active{
-  transform:scale(.98);
+.primary{
+  background:linear-gradient(135deg,var(--pink),#e9004d);
+  color:white;
+  box-shadow:0 10px 30px rgba(255,45,104,.25);
+}
+
+.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(255,45,104,.4);
 }
 
 .choice{
-  display:grid;
-  gap:12px;
-  margin-top:18px;
-}
-
-.choice button{
-  background:#191c24;
-  border:1px solid #343744;
-  box-shadow:none;
+  background:#191c25;
+  border:1px solid #343845;
+  color:white;
   text-align:left;
 }
 
-.choice button:hover{
+.choice:hover{
   border-color:var(--pink);
+  background:#21141b;
 }
 
 .hidden{
   display:none;
 }
 
+.result{
+  margin-top:25px;
+  padding:25px;
+  border-radius:18px;
+  background:rgba(66,211,146,.08);
+  border:1px solid rgba(66,211,146,.3);
+  color:#ddd;
+  line-height:1.7;
+}
+
 .final{
   text-align:center;
-  padding:35px 20px 45px;
+  padding:50px 25px;
+  background:
+    radial-gradient(circle,
+      rgba(255,45,104,.18),
+      transparent 65%);
 }
 
 .final .ring{
-  font-size:65px;
-  animation:pulse 1.8s infinite;
+  font-size:85px;
   margin-bottom:20px;
 }
 
 .final h2{
-  font-size:36px;
+  color:white;
 }
 
 .final p{
-  color:#d6d6dc;
-  font-size:18px;
+  color:#ddd;
+  font-size:20px;
   line-height:1.7;
-  margin:15px 0 25px;
 }
 
-.yes{
-  background:linear-gradient(135deg,#ff174f,#ff4d78);
-  font-size:18px;
-}
-
-.no{
-  background:#171922;
-  margin-top:12px;
-}
-
-.footer{
+.small{
+  margin-top:30px;
+  color:var(--muted);
+  font-size:13px;
   text-align:center;
-  color:#686b75;
-  font-size:11px;
-  letter-spacing:2px;
-  margin-top:22px;
 }
 
-.heart{
-  position:fixed;
-  bottom:-30px;
-  font-size:18px;
-  pointer-events:none;
-  animation:rise 5s linear forwards;
-  z-index:20;
-}
-
-@keyframes rise{
-  0%{
-    transform:translateY(0) scale(.7);
-    opacity:0;
-  }
-  15%{opacity:1;}
-  100%{
-    transform:translateY(-110vh) rotate(25deg);
-    opacity:0;
-  }
-}
-
-@keyframes pulse{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.12);}
-}
-
-@media(max-width:500px){
+@media(max-width:600px){
   .wrap{
-    padding:10px 10px 35px;
+    padding:12px;
+  }
+
+  .content{
+    padding:30px 22px 40px;
   }
 
   .hero{
-    min-height:300px;
+    min-height:350px;
   }
 
-  .hero h1{
-    font-size:43px;
+  .heart{
+    font-size:90px;
   }
 
-  h2{
-    font-size:28px;
-  }
-
-  #text{
-    font-size:17px;
+  .text{
+    font-size:18px;
   }
 }
 </style>
@@ -327,27 +288,18 @@ button:active{
 <div class="wrap">
 
   <div class="top">
-    <div class="logo">MISSÃO HIGOR</div>
-    <div class="status">OPERAÇÃO: ❤️</div>
+    <div class="logo">MISSÃO ESPECIAL • 2026</div>
   </div>
 
   <div class="card">
 
-    <div class="hero">
+    <!-- HERO -->
+    <section class="hero">
       <div class="heroText">
-        <div class="small">HOPE COUNTY • MISSÃO ESPECIAL</div>
-
-        <h1>
-          MISSÃO
-          <span>HIGOR</span>
-        </h1>
-
-        <p>
-          Um novo começo. Uma nova história.
-          Nós dois, contra o mundo. ❤️
-        </p>
+        <div class="heart">❤️</div>
+        <p>O destino dessa missão pode mudar duas vidas.</p>
       </div>
-    </div>
+    </section>
 
     <div class="content">
 
@@ -355,253 +307,241 @@ button:active{
         <div class="bar" id="bar"></div>
       </div>
 
-      <div class="mission" id="mission">
-        MISSÃO 01
-      </div>
+      <!-- MISSÃO 01 -->
+      <section id="mission1">
 
-      <h2 id="title">
-        O início da nossa história
-      </h2>
+        <div class="mission">MISSÃO 01</div>
 
-      <p id="text">
-        Higor, você recebeu uma missão especial.
-        Não existem inimigos, armas ou mapas perigosos.
-        Existe apenas uma pessoa querendo descobrir
-        se você está disposto a viver a próxima fase
-        dessa história ao lado dela.
-      </p>
+        <h2>O início da nossa história</h2>
 
-      <div class="quote" id="quote">
-        "Algumas missões começam com um objetivo.
-        As melhores começam com um sentimento."
-      </div>
+        <p class="text">
+          Higor, você recebeu uma missão especial.
+          Não existem inimigos, armas ou mapas perigosos.
+          Existe apenas uma pessoa querendo descobrir
+          se você está disposto a viver a próxima fase
+          dessa história ao lado dela.
+        </p>
 
-      <button id="mainButton" onclick="startMission()">
-        🎮 ACEITAR MISSÃO
-      </button>
+        <div class="quote">
+          "Algumas missões começam com um objetivo.
+          As melhores começam com um sentimento."
+        </div>
 
-      <div id="choices" class="choice hidden"></div>
+        <div class="objectives">
 
-    </div>
+          <h3>OBJETIVOS DA MISSÃO</h3>
 
-    <div id="finalScreen" class="final hidden">
+          <div class="objective">
+            ❤️ Conhecer a pessoa que está ao seu lado.
+          </div>
 
-      <div class="ring">💍</div>
+          <div class="objective">
+            💕 Construir memórias juntos.
+          </div>
 
-      <div class="mission">
-        OBJETIVO FINAL
-      </div>
+          <div class="objective">
+            🫶 Enfrentar tudo juntos.
+          </div>
 
-      <h2>
-        HIGOR, VOCÊ ACEITA?
-      </h2>
+          <div class="objective">
+            💍 Descobrir o próximo destino.
+          </div>
 
-      <p>
-        Depois de tudo que vivemos,
-        eu não quero apenas mais uma missão
-        ao seu lado.
+        </div>
 
-        <br><br>
+        <button class="primary" onclick="mission2()">
+          🎮 ACEITAR MISSÃO
+        </button>
 
-        Quero construir uma vida inteira com você.
+      </section>
 
-        <br><br>
 
-        Quero continuar escolhendo você,
-        todos os dias.
+      <!-- MISSÃO 02 -->
+      <section id="mission2" class="hidden">
 
-        <br><br>
+        <div class="mission">MISSÃO 02 • A ESCOLHA</div>
 
-        ❤️
-      </p>
+        <h2>Agora a decisão é sua.</h2>
 
-      <button class="yes" onclick="accepted()">
-        💍 SIM, EU ACEITO!
-      </button>
+        <p class="text">
+          Toda grande aventura chega a um momento em que
+          o jogador precisa escolher seu caminho.
+        </p>
 
-      <button class="no" onclick="runAway()">
-        😳 PRECISO PENSAR...
-      </button>
+        <div class="quote">
+          "Alguns caminhos levam a lugares.
+          Outros levam à pessoa certa."
+        </div>
 
-      <div id="answer" class="hidden" style="margin-top:25px;">
-        <div style="font-size:50px;">🥹❤️💍</div>
+        <div class="objectives">
 
-        <h2 style="margin-top:15px;">
-          MISSÃO CONCLUÍDA!
-        </h2>
+          <h3>NOVA MISSÃO</h3>
+
+          <div class="objective">
+            🎯 Objetivo: descobrir o que Higor realmente deseja.
+          </div>
+
+          <div class="objective">
+            ❤️ Recompensa: uma nova fase da nossa história.
+          </div>
+
+          <div class="objective">
+            💍 Nível de dificuldade: impossível ignorar o amor.
+          </div>
+
+        </div>
+
+        <h3 style="margin-top:35px;margin-bottom:15px;">
+          HIGOR, QUAL É A SUA ESCOLHA?
+        </h3>
+
+        <button class="choice" onclick="choose('yes')">
+          ❤️ Escolher ficar ao lado dela.
+        </button>
+
+        <button class="choice" onclick="choose('adventure')">
+          🎮 Aceitar viver essa aventura juntos.
+        </button>
+
+        <button class="choice" onclick="choose('future')">
+          💍 Descobrir o que o futuro reserva para nós.
+        </button>
+
+        <div id="result" class="result hidden"></div>
+
+      </section>
+
+
+      <!-- FINAL -->
+      <section id="final" class="final hidden">
+
+        <div class="ring">💍</div>
+
+        <div class="mission">
+          MISSÃO FINAL
+        </div>
+
+        <h2>A próxima fase é nossa.</h2>
 
         <p>
-          O maior objetivo da nossa história
-          acaba de ser desbloqueado.
-          <br><br>
-          <strong>
-            AGORA É NÓS DOIS. PARA SEMPRE.
-          </strong>
+          Higor, depois de todas essas missões,
+          existe uma última pergunta.
         </p>
+
+        <div class="quote">
+          "Não quero apenas viver momentos com você.
+          Quero construir uma vida inteira ao seu lado."
+        </div>
+
+        <p>
+          Você aceita continuar essa aventura comigo?
+          ❤️
+        </p>
+
+        <button class="primary" onclick="accepted()">
+          💍 SIM, EU ACEITO!
+        </button>
+
+        <div id="acceptedMessage" class="result hidden">
+          ❤️ MISSÃO CONCLUÍDA ❤️<br><br>
+
+          Higor escolheu a próxima fase.<br><br>
+
+          <strong>
+            Agora começa a nossa maior aventura:
+            a vida juntos.
+          </strong>
+        </div>
+
+      </section>
+
+      <div class="small">
+        Feito com amor para a pessoa que eu escolhi para a vida. ❤️
       </div>
 
     </div>
-
   </div>
-
-  <div class="footer">
-    FEITO COM AMOR • PARA O HIGOR ❤️
-  </div>
-
 </div>
+
 
 <script>
 
-const missions = [
+function mission2(){
 
-{
-  number:"MISSÃO 01",
-  title:"O início da nossa história",
-  text:"Higor, tudo começou com duas pessoas que talvez nem imaginassem onde aquela história iria chegar. Hoje existe uma missão muito maior esperando por nós.",
-  quote:"Algumas histórias começam por acaso. As melhores viram destino.",
-  choices:[
-    ["❤️ CONTINUAR","next"]
-  ]
-},
+  document.getElementById("mission1").classList.add("hidden");
 
-{
-  number:"MISSÃO 02",
-  title:"Escolha o nosso futuro",
-  text:"Durante todo esse caminho, nós construímos lembranças, enfrentamos momentos difíceis, sorrimos, aprendemos e seguimos juntos. Agora existe uma nova fase esperando por nós.",
-  quote:"Não importa o tamanho do desafio quando encontramos alguém com quem queremos enfrentá-lo.",
-  choices:[
-    ["💖 EU ESCOLHO VOCÊ","next"]
-  ]
-},
+  document.getElementById("mission2").classList.remove("hidden");
 
-{
-  number:"MISSÃO 03",
-  title:"Construa memórias",
-  text:"A próxima missão não é sobre chegar a algum lugar. É sobre viver. Fazer planos, viajar, rir das coisas bobas, superar os dias difíceis e comemorar cada pequena vitória juntos.",
-  quote:"O melhor lugar do mundo é aquele onde podemos chamar alguém de lar.",
-  choices:[
-    ["🏠 QUERO CONSTRUIR NOSSO LAR","next"]
-  ]
-},
+  document.getElementById("bar").style.width="50%";
 
-{
-  number:"MISSÃO 04",
-  title:"Faça planos",
-  text:"Existe uma pergunta que eu guardo no coração. Uma pergunta que pode mudar completamente o rumo da nossa história.",
-  quote:"Alguns momentos merecem ser lembrados para sempre.",
-  choices:[
-    ["💍 DESCOBRIR O OBJETIVO FINAL","final"]
-  ]
-}
-
-];
-
-let current=0;
-
-function startMission(){
-  document.getElementById("mainButton").classList.add("hidden");
-  showMission(0);
-}
-
-function showMission(index){
-
-  current=index;
-
-  const m=missions[index];
-
-  document.getElementById("mission").innerText=m.number;
-  document.getElementById("title").innerText=m.title;
-  document.getElementById("text").innerText=m.text;
-  document.getElementById("quote").innerText=m.quote;
-
-  document.getElementById("bar").style.width=((index+1)/5*100)+"%";
-
-  const choices=document.getElementById("choices");
-  choices.innerHTML="";
-  choices.classList.remove("hidden");
-
-  m.choices.forEach(item=>{
-
-    const btn=document.createElement("button");
-    btn.innerText=item[0];
-
-    btn.onclick=()=>{
-
-      if(item[1]==="next"){
-        if(current < missions.length-1){
-          showMission(current+1);
-        }
-      }
-
-      if(item[1]==="final"){
-        showFinal();
-      }
-
-    };
-
-    choices.appendChild(btn);
-
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
   });
-
-  createHearts();
 }
 
-function showFinal(){
 
-  document.querySelector(".content").classList.add("hidden");
-  document.getElementById("finalScreen").classList.remove("hidden");
+function choose(option){
 
-  document.getElementById("bar").style.width="100%";
+  const result=document.getElementById("result");
 
-  createHearts();
+  result.classList.remove("hidden");
+
+  if(option==="yes"){
+
+    result.innerHTML=
+    "❤️ <strong>Escolha registrada.</strong><br><br>"+
+    "Você escolheu ficar ao lado dela. "+
+    "E algumas escolhas simples acabam mudando "+
+    "toda uma história.";
+
+  }
+
+  if(option==="adventure"){
+
+    result.innerHTML=
+    "🎮 <strong>Missão aceita.</strong><br><br>"+
+    "Você decidiu viver essa aventura junto dela. "+
+    "Mas parece que existe uma última missão esperando por você...";
+
+  }
+
+  if(option==="future"){
+
+    result.innerHTML=
+    "💍 <strong>O futuro foi desbloqueado.</strong><br><br>"+
+    "Existe uma próxima fase que só pode ser "+
+    "desbloqueada por uma pessoa: você.";
+
+  }
+
+  setTimeout(()=>{
+
+    document.getElementById("final").classList.remove("hidden");
+
+    document.getElementById("bar").style.width="100%";
+
+    document.getElementById("final").scrollIntoView({
+      behavior:"smooth"
+    });
+
+  },1800);
 }
+
 
 function accepted(){
 
-  document.querySelector(".yes").classList.add("hidden");
-  document.querySelector(".no").classList.add("hidden");
+  document
+  .getElementById("acceptedMessage")
+  .classList
+  .remove("hidden");
 
-  document.getElementById("answer").classList.remove("hidden");
+  document.getElementById("bar").style.width="100%";
 
-  for(let i=0;i<25;i++){
-    setTimeout(createHearts,i*100);
-  }
-}
-
-function runAway(){
-
-  const btn=document.querySelector(".no");
-
-  btn.innerText="😳 TEM CERTEZA?";
-
-  setTimeout(()=>{
-    btn.innerText="❤️ EU SÓ ESTAVA BRINCANDO";
-  },900);
-
-}
-
-function createHearts(){
-
-  const heart=document.createElement("div");
-
-  heart.className="heart";
-
-  const hearts=["❤️","💕","💖","💗","💓","💍"];
-
-  heart.innerText=
-    hearts[Math.floor(Math.random()*hearts.length)];
-
-  heart.style.left=
-    Math.random()*100+"vw";
-
-  heart.style.animationDuration=
-    (4+Math.random()*4)+"s";
-
-  document.body.appendChild(heart);
-
-  setTimeout(()=>{
-    heart.remove();
-  },8000);
+  window.scrollTo({
+    top:document.body.scrollHeight,
+    behavior:"smooth"
+  });
 
 }
 
